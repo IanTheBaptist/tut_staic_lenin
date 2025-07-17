@@ -5,6 +5,8 @@ const map = new maplibregl.Map({
     zoom: 5
 });
 
+const BELARUS_BOUNDS = [23.17, 51.25, 32.77, 56.17];
+
 const sidebar = document.getElementById('sidebar');
 const sidebarContent = document.getElementById('sidebar-content');
 const closeSidebarBtn = document.getElementById('close-sidebar-btn');
@@ -18,9 +20,7 @@ class AboutControl {
         this._map = map;
         this._container = document.createElement('div');
         this._container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
-        this._container.innerHTML = '<button type="button" aria-label="Аб праекце" title=" Аб праекце"><b>i</b></button>';
-        this._container.style.fontSize = '30px';
-        this._container.style.fontWeight = 'bold';
+        this._container.innerHTML = `<button type="button" aria-label="Аб праекце" title="Аб праекце"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1-8h-2V7h2v2z" fill="currentColor"/></svg></button>`;
         
         this._container.onclick = () => {
             modalOverlay.classList.remove('hidden');
@@ -39,15 +39,12 @@ class ResetViewControl {
         this._map = map;
         this._container = document.createElement('div');
         this._container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
-        this._container.innerHTML = '<button type="button" aria-label="Вярнуцца да пачатковага выгляду" title="Вярнуцца да пачатковага выгляду"><b>◎</b></button>';
-        this._container.style.fontSize = '5px';
-        this._container.style.fontWeight = 'bold';
+        this._container.innerHTML = '<button type="button" aria-label="Вярнуцца да пачатковага выгляду" title="Вярнуцца да пачатковага выгляду"><b>⛶</b></button>';
         
         this._container.onclick = () => {
-            this._map.flyTo({
-                center: [28.0, 53.5],
-                zoom: 5,
-                speed: 2.5
+            this._map.fitBounds(BELARUS_BOUNDS, {
+                padding: 10, 
+                duration: 2300 
             });
         };
         return this._container;
