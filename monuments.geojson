@@ -1,0 +1,708 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.833945164187078, 53.68381559318151
+        ]
+      },
+      "properties": {
+        "city": "г. Гродно",
+        "title": "Ленин в чепчике",
+        "regionHashtag": "#Гродзенская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_1@17-03-2024_14-01-44.jpg",
+        "imageUrl_full": "photos/photo_1@17-03-2024_14-01-44.jpg",
+        "source_id": 2,
+        "source_date": "2024-03-17T14:01:44"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        23.655955, 53.829806
+        ]
+      },
+      "properties": {
+        "city": "г.п. Сапоцкин",
+        "title": null,
+        "regionHashtag": "#Гродзенская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_2@17-03-2024_14-03-58.jpg",
+        "imageUrl_full": "photos/photo_2@17-03-2024_14-03-58.jpg",
+        "source_id": 3,
+        "source_date": "2024-03-17T14:03:58"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        26.017487, 53.132544
+        ]
+      },
+      "properties": {
+        "city": "г. Баранавічы",
+        "title": null,
+        "regionHashtag": "#Брэсцкая",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_3@17-03-2024_14-05-04.jpg",
+        "imageUrl_full": "photos/photo_3@17-03-2024_14-05-04.jpg",
+        "source_id": 4,
+        "source_date": "2024-03-17T14:05:04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        26.839776,55.11328
+        ]
+      },
+      "properties": {
+        "city": "г. Паставы",
+        "title": "ідзе ў райвыканкам",
+        "regionHashtag": "#Віцебская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_5@17-03-2024_14-23-40.jpg",
+        "imageUrl_full": "photos/photo_5@17-03-2024_14-23-40.jpg",
+        "source_id": 6,
+        "source_date": "2024-03-17T14:23:40"
+      }
+    },
+    {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.173468,53.650124
+          ]
+        },
+        "properties": {
+          "city": "аг. Шчорсы",
+          "title": null,
+          "regionHashtag": "#Гродзенская",
+          "monumentType": "бюст",
+          "imageUrl_preview":"photos/photo_6@17-03-2024_14-30-08.jpg",
+          "imageUrl_full": "photos/photo_6@17-03-2024_14-30-08.jpg",
+          "source_id": 7,
+          "source_date": "2024-03-17T14:30:08"
+        }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        25.3187939713401,53.0954872005343
+        ]
+      },
+      "properties": {
+        "city": "г. Слонім",
+        "title": "Залаты хлопчык",
+        "regionHashtag": "#Гродзенская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_7@17-03-2024_14-41-39.jpg",
+        "imageUrl_full": "photos/photo_7@17-03-2024_14-41-39.jpg",
+        "source_id": 8,
+        "source_date": "2024-03-17T14:41:39"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            26.8390719599467,54.3076604587084
+        ]
+      },
+      "properties": {
+        "city": "г. Маладзечна",
+        "title": null,
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_9@17-03-2024_14-43-50.jpg",
+        "imageUrl_full": "photos/photo_9@17-03-2024_14-43-50.jpg",
+        "source_id": 10,
+        "source_date": "2024-03-17T14:43:50"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            30.0367418479064,52.8906967980827
+        ]
+      },
+      "properties": {
+        "city": "г. Жлобін",
+        "title": null,
+        "regionHashtag": "#Гомельская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_10@17-03-2024_14-46-14.jpg",
+        "imageUrl_full": "photos/photo_10@17-03-2024_14-46-14.jpg",
+        "source_id": 11,
+        "source_date": "2024-03-17T14:46:14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.6844670966561,52.0935163243121
+        ]
+      },
+      "properties": {
+        "city": "г. Брэст",
+        "title": "па легендзе, у савецкі час паказваў на гастраном у якім налівалі",
+        "regionHashtag": "#Брэсцкая",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_11@30-03-2024_10-09-47.jpg",
+        "imageUrl_full": "photos/photo_11@30-03-2024_10-09-47.jpg",
+        "source_id": 12,
+        "source_date": "2024-03-30T10:09:47"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.545469111108,53.8956038334424
+        ]
+      },
+      "properties": {
+        "city": "г. Мінск",
+        "title": "базіраваны",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_12@01-04-2024_14-43-05.jpg",
+        "imageUrl_full": "photos/photo_12@01-04-2024_14-43-05.jpg",
+        "source_id": 13,
+        "source_date": "2024-04-01T14:43:05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.7033125804914,53.9439192343726
+        ]
+      },
+      "properties": {
+        "city": "г. Мінск, Вялікі Лес",
+        "title": "Прессуха у него знатная",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_13@01-04-2024_17-47-25.jpg",
+        "imageUrl_full": "photos/photo_13@01-04-2024_17-47-25.jpg",
+        "source_id": 14,
+        "source_date": "2024-04-01T17:47:25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.709199,53.94849
+        ]
+      },
+      "properties": {
+        "city": "г. Мінск, Вялікі Лес",
+        "title": "Белым клином бей красных",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_14@01-04-2024_17-54-54.jpg",
+        "imageUrl_full": "photos/photo_14@01-04-2024_17-54-54.jpg",
+        "source_id": 15,
+        "source_date": "2024-04-01T17:54:54"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            30.4295530482612,54.5107001748269
+        ]
+      },
+      "properties": {
+        "city": "г. Орша",
+        "title": null,
+        "regionHashtag": "#Віцебская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_15@02-04-2024_16-05-00.jpg",
+        "imageUrl_full": "photos/photo_15@02-04-2024_16-05-00.jpg",
+        "source_id": 16,
+        "source_date": "2024-04-02T16:05:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.6253626897853,53.9294196692112
+        ]
+      },
+      "properties": {
+        "city": "г. Мінск",
+        "title": "Мінскі электра-механічны завод",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_16@11-05-2024_17-43-03.jpg",
+        "imageUrl_full": "photos/photo_16@11-05-2024_17-43-03.jpg",
+        "source_id": 17,
+        "source_date": "2024-05-11T17:43:03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            26.9143054422577,54.487957993998
+        ]
+      },
+      "properties": {
+        "city": "г. Вілейка",
+        "title": "ці ты дурны, ці ты з вілейкі",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_17@12-05-2024_08-40-09.jpg",
+        "imageUrl_full": "photos/photo_17@12-05-2024_08-40-09.jpg",
+        "source_id": 18,
+        "source_date": "2024-05-12T08:40:09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            29.4230244511694,52.8060560226653
+        ]
+      },
+      "properties": {
+        "city": "г.п. Паричи",
+        "title": "цивильный золотой",
+        "regionHashtag": "#Гомельская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_18@13-05-2024_16-41-45.jpg",
+        "imageUrl_full": "photos/photo_18@13-05-2024_16-41-45.jpg",
+        "source_id": 19,
+        "source_date": "2024-05-13T16:41:45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            29.2248957435917,53.1458079943614
+        ]
+      },
+      "properties": {
+        "city": "г. Бабруйск",
+        "title": null,
+        "regionHashtag": "#Магілеўская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_19@13-05-2024_16-42-00.jpg",
+        "imageUrl_full": "photos/photo_19@13-05-2024_16-42-00.jpg",
+        "source_id": 20,
+        "source_date": "2024-05-13T16:42:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            28.3215268936012,54.0943092449006
+        ]
+      },
+      "properties": {
+        "city": "г. Жодзіна",
+        "title": null,
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_20@25-05-2024_21-27-33.jpg",
+        "imageUrl_full": "photos/photo_20@25-05-2024_21-27-33.jpg",
+        "source_id": 21,
+        "source_date": "2024-05-25T21:27:33"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.5484621317327,53.8920836367731
+        ]
+      },
+      "properties": {
+        "city": "г. Мінск",
+        "title": "тут вісіць ленін",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_21@04-06-2024_11-23-21.jpg",
+        "imageUrl_full": "photos/photo_21@04-06-2024_11-23-21.jpg",
+        "source_id": 22,
+        "source_date": "2024-06-04T11:23:21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            30.3430678566825,53.9094250129242
+        ]
+      },
+      "properties": {
+        "city": "г. Магілёў",
+        "title": "А мог быць сталічным хлапчуком",
+        "regionHashtag": "#Магілеўская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_22@13-06-2024_20-45-12.jpg",
+        "imageUrl_full": "photos/photo_22@13-06-2024_20-45-12.jpg",
+        "source_id": 23,
+        "source_date": "2024-06-13T20:45:12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            28.9939828136835,53.8346139882511
+        ]
+      },
+      "properties": {
+        "city": "г. Беразіно",
+        "title": "шырокі",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_24@08-07-2024_10-30-56.jpg",
+        "imageUrl_full": "photos/photo_24@08-07-2024_10-30-56.jpg",
+        "source_id": 25,
+        "source_date": "2024-07-08T10:30:56"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        24.3547935209975,52.2087375432104
+        ]
+      },
+      "properties": {
+        "city": "г. Кобрын",
+        "title": "маленькі",
+        "regionHashtag": "#Брэсцкая",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_25@09-07-2024_11-16-13.jpg",
+        "imageUrl_full": "photos/photo_25@09-07-2024_11-16-13.jpg",
+        "source_id": 26,
+        "source_date": "2024-07-09T11:16:13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            28.7805635933225,55.4910986443725
+        ]
+      },
+      "properties": {
+        "city": "г. Полацк",
+        "title": "начны",
+        "regionHashtag": "#Віцебская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_26@22-07-2024_13-49-10.jpg",
+        "imageUrl_full": "photos/photo_26@22-07-2024_13-49-10.jpg",
+        "source_id": 27,
+        "source_date": "2024-07-22T13:49:10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.730309,53.476406
+        ]
+      },
+      "properties": {
+        "city": "г. Стаўбцы",
+        "title": null,
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_27@14-08-2024_10-26-03.jpg",
+        "imageUrl_full": "photos/photo_27@14-08-2024_10-26-03.jpg",
+        "source_id": 28,
+        "source_date": "2024-08-14T10:26:03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        26.680797,53.219944
+        ]
+      },
+      "properties": {
+        "city": "г. Нясвіж",
+        "title": null,
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_28@14-08-2024_10-27-45.jpg",
+        "imageUrl_full": "photos/photo_28@14-08-2024_10-27-45.jpg",
+        "source_id": 29,
+        "source_date": "2024-08-14T10:27:45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.292261,54.004623
+        ]
+      },
+      "properties": {
+        "city": "г. Заслаўе",
+        "title": null,
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_29@13-09-2024_14-21-44.jpg",
+        "imageUrl_full": "photos/photo_29@13-09-2024_14-21-44.jpg",
+        "source_id": 31,
+        "source_date": "2024-09-13T14:21:44"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            26.1027807498019,52.1109795491107
+        ]
+      },
+      "properties": {
+        "city": "г.Пінск",
+        "title": "нядурная дупа",
+        "regionHashtag": "#Брэсцкая",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_30@13-09-2024_14-29-04.jpg",
+        "imageUrl_full": "photos/photo_30@13-09-2024_14-29-04.jpg",
+        "source_id": 32,
+        "source_date": "2024-09-13T14:29:04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            30.2061698709898,55.1934458832185
+        ]
+      },
+      "properties": {
+        "city": "г. Віцебск",
+        "title": "Ленін з грыбніцай",
+        "regionHashtag": "#Віцебская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_32@24-11-2024_20-00-39.jpg",
+        "imageUrl_full": "photos/photo_32@24-11-2024_20-00-39.jpg",
+        "source_id": 34,
+        "source_date": "2024-11-24T20:00:39"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            28.638462,53.308767
+        ]
+      },
+      "properties": {
+        "city": "г. Асіповічы",
+        "title": null,
+        "regionHashtag": "#Магілеўская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_33@07-12-2024_09-54-04.jpg",
+        "imageUrl_full": "photos/photo_33@07-12-2024_09-54-04.jpg",
+        "source_id": 35,
+        "source_date": "2024-12-07T09:54:04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            31.171414,52.55904
+        ]
+      },
+      "properties": {
+        "city": "г. Ветка",
+        "title": "Памятнік У.І. Леніну ў Ветке. Подпіс унізе: \"В.И. Ленин\"",
+        "regionHashtag": "#гомельская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_35@17-03-2025_10-13-20.jpg",
+        "imageUrl_full": "photos/photo_35@17-03-2025_10-13-20.jpg",
+        "source_id": 37,
+        "source_date": "2025-03-17T10:13:20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            30.991327,52.43079
+        ]
+      },
+      "properties": {
+        "city": "г. Гомель",
+        "title": "У пакоі.\nДадумаўся не мерзнуць.",
+        "regionHashtag": "#гомельская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_36@17-03-2025_10-15-27.jpg",
+        "imageUrl_full": "photos/photo_36@17-03-2025_10-15-27.jpg",
+        "source_id": 38,
+        "source_date": "2025-03-17T10:15:27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            28.512088,54.224538
+        ]
+      },
+      "properties": {
+        "city": "г. Барысаў",
+        "title": "Нейкі багаты. Ёсць стол, сцяг, дзіда!",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_37@17-03-2025_10-17-00.jpg",
+        "imageUrl_full": "photos/photo_37@17-03-2025_10-17-00.jpg",
+        "source_id": 39,
+        "source_date": "2025-03-17T10:17:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            30.976642,52.35035
+        ]
+      },
+      "properties": {
+        "city": "п. Чонкі",
+        "title": null,
+        "regionHashtag": "#Гомельская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_39@20-04-2025_09-35-53.jpg",
+        "imageUrl_full": "photos/photo_39@20-04-2025_09-35-53.jpg",
+        "source_id": 41,
+        "source_date": "2025-04-20T09:35:53"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.847645,54.200334
+        ]
+      },
+      "properties": {
+        "city": "г. Лагойск",
+        "title": "Тры стаўпы камунізму\n1. Маркс\n2. Ленін\n3. Ваша чырвонае серца",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_40@21-04-2025_09-39-42.jpg",
+        "imageUrl_full": "photos/photo_40@21-04-2025_09-39-42.jpg",
+        "source_id": 42,
+        "source_date": "2025-04-21T09:39:42"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.889508,53.852315
+        ]
+      },
+      "properties": {
+        "city": "Ст. Сузор’е, Смалявіцкі раён",
+        "title": "В. І. Ленін на сваім сходзе",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_42@18-05-2025_23-04-54.jpg",
+        "imageUrl_full": "photos/photo_42@18-05-2025_23-04-54.jpg",
+        "source_id": 44,
+        "source_date": "2025-05-18T23:04:54"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            28.089739, 54.030089
+        ]
+      },
+      "properties": {
+        "city": "г. Смалявічы",
+        "title": "хагі ваггі згарэў, пачарнеў...",
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_43@13-06-2025_13-24-03.jpg",
+        "imageUrl_full": "photos/photo_43@13-06-2025_13-24-03.jpg",
+        "source_id": 45,
+        "source_date": "2025-06-13T13:24:03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            27.031941, 55.639685
+        ]
+      },
+      "properties": {
+        "city": "г. Браслаў",
+        "title": "курортны",
+        "regionHashtag": "#Віцебская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_45@04-07-2025_13-28-15.jpg",
+        "imageUrl_full": "photos/photo_45@04-07-2025_13-28-15.jpg",
+        "source_id": 47,
+        "source_date": "2025-07-04T13:28:15"
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тут стаіць ленін</title>
+
+    <script src='https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="about-modal-overlay" class="hidden">
+        <div id="about-modal">
+            <button id="close-modal-btn">&times;</button>
+            <h2>Аб мапе</h2>
+            <p>
+                Інтерактыўная мапа знойдзеных намі помнікаў Леніну на тэрыторі Беларусі. 
+            </p>
+            <div class="links">
+                <a href="https://t.me/tut_staic_lenin" target="_blank">Наш Тэлеграм-канал</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox-overlay" class="hidden">
+        <img id="lightbox-image" src="" alt="Прагляд выявы">
+    </div>
+
+    <div id="map"></div>
+
+    <div id="sidebar">
+        <button id="close-sidebar-btn">&times;</button>
+        <div id="sidebar-content">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
