@@ -703,6 +703,44 @@
         "source_id": 47,
         "source_date": "2025-07-04T13:28:15"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.773352, 55.484895
+        ]
+      },
+      "properties": {
+        "city": "г. Полацк",
+        "title": null,
+        "regionHashtag": "#віцебская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_46@13-07-2025_18-50-53.jpg",
+        "imageUrl_full": "photos/photo_46@13-07-2025_18-50-53.jpg",
+        "source_id": 48,
+        "source_date": "2025-07-13T18:50:53"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.552975, 53.027151 
+        ]
+      },
+      "properties": {
+        "city": "г. Слуцк",
+        "title": null,
+        "regionHashtag": "#Мінская",
+        "monumentType": null,
+        "imageUrl_preview": "photos/photo_47@18-07-2025_07-48-36_thumb.jpg",
+        "imageUrl_full": "photos/photo_47@18-07-2025_07-48-36.jpg",
+        "source_id": 49,
+        "source_date": "2025-07-18T07:48:36"
+      }
     }
   ]
 }

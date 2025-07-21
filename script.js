@@ -73,10 +73,18 @@ map.on('load', async () => {
             source: 'monuments',
             layout: {
                 'icon-image': 'monument-icon',
-                'icon-size': 0.05,
                 'icon-allow-overlap': true,
-                'icon-anchor': 'bottom'
+                'icon-anchor': 'bottom',
+                'icon-size': [
+                    'interpolate', 
+                    ['linear'],    
+                    ['zoom'],      
+                    6, 0.05,     
+                    15, 0.09,
+                ]
+
             }
+            
         });
 
         map.on('click', 'monument-points', (e) => {
@@ -158,7 +166,7 @@ modalOverlay.addEventListener('click', (e) => {
 
 sidebar.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('card-image')) {
-        lightboxImage.src = e.target.src;
+        lightboxImage.src = e.target.dataset.fullSrc;
         lightboxOverlay.classList.remove('hidden');
     }
 });
