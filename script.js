@@ -2,10 +2,11 @@ const map = new maplibregl.Map({
     container: 'map', 
     style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
     center: [28.0, 53.5], 
-    zoom: 5
+    zoom: 4.7
 });
 
 const BELARUS_BOUNDS = [23.17, 51.25, 32.77, 56.17];
+let geojsonDataCache = null;
 
 const sidebar = document.getElementById('sidebar');
 const sidebarContent = document.getElementById('sidebar-content');
@@ -89,51 +90,8 @@ map.on('load', async () => {
 
         map.on('click', 'monument-points', (e) => {
             const feature = e.features[0];
-            const coordinates = feature.geometry.coordinates.slice();
-            const properties = feature.properties;
+            openSidebarForFeature(feature);
 
-            const contentHTML = `
-                <div class="card-container">
-                    <div class="card-image-wrapper">
-                        <img class="card-image" 
-                             src="${properties.imageUrl_preview}" 
-                             data-full-src="${properties.imageUrl_full}" 
-                             alt="${properties.city || properties.title}">
-                    </div>
-                    <div class="card-text-wrapper">
-                        <header class="card-header">
-                            <h2>${properties.city}</h2>
-                        </header>
-                        
-                        ${properties.title ? `<div class="card-body"><p>${properties.title}</p></div>` : ''}
-            
-                        <div class="card-tags">
-                            ${properties.regionHashtag ? `<span class="tag">${properties.regionHashtag}</span>` : ''}
-                            ${properties.monumentType ? `<span class="tag">${properties.monumentType}</span>` : ''}
-                        </div>
-                    </div>
-                </div>
-            `;
-            sidebarContent.innerHTML = contentHTML;
-        
-            const isMobile = window.innerWidth <= 480;
-            let padding;
-            if (isMobile) {
-                sidebar.classList.add('visible', 'measure-helper');
-                padding = { bottom: sidebar.offsetHeight };
-                sidebar.classList.remove('visible', 'measure-helper');
-            } else {
-                padding = { right: sidebar.offsetWidth };
-            }
-        
-            map.flyTo({
-                center: coordinates,
-                zoom: 15,
-                speed: 1.5,
-                padding: padding
-            });
-        
-            sidebar.classList.add('visible');
         });
 
         map.on('mouseenter', 'monument-points', () => { map.getCanvas().style.cursor = 'pointer'; });
@@ -141,6 +99,9 @@ map.on('load', async () => {
 
         map.addControl(new AboutControl(), 'top-left');
         map.addControl(new ResetViewControl(), 'top-left');
+
+        await handleUrlHash();
+
 
 
     } catch (error) {
@@ -150,6 +111,9 @@ map.on('load', async () => {
 
 closeSidebarBtn.addEventListener('click', () => {
     sidebar.classList.remove('visible');
+    if (window.location.hash.startsWith('#monument/')) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
 });
 
 function closeModal() {
@@ -174,3 +138,86 @@ sidebar.addEventListener('click', (e) => {
 lightboxOverlay.addEventListener('click', () => {
     lightboxOverlay.classList.add('hidden');
 });
+
+window.onpopstate = function(event) {
+    if (!event.state || event.state.sidebar !== 'open') {
+        sidebar.classList.remove('visible');
+    }
+};
+
+function openSidebarForFeature(feature) {
+    const properties = feature.properties;
+    const coordinates = feature.geometry.coordinates;
+    const contentHTML = `
+        <div class="card-container">
+            <div class="card-image-wrapper">
+                <img class="card-image" 
+                    src="${properties.imageUrl_preview}" 
+                    data-full-src="${properties.imageUrl_full}" 
+                    alt="${properties.city || properties.title}">
+            </div>
+            <div class="card-text-wrapper">
+                <header class="card-header">
+                    <h2>${properties.city}</h2>
+                </header>
+                
+                ${properties.title ? `<div class="card-body"><p>${properties.title}</p></div>` : ''}
+    
+                <div class="card-tags">
+                    ${properties.regionHashtag ? `<span class="tag">${properties.regionHashtag}</span>` : ''}
+                    ${properties.monumentType ? `<span class="tag">${properties.monumentType}</span>` : ''}
+                </div>
+            </div>
+        </div>
+    `;
+    sidebarContent.innerHTML = contentHTML;
+
+    const isMobile = window.innerWidth <= 480;
+    let padding;
+    if (isMobile) {
+        sidebar.classList.add('visible', 'measure-helper');
+        padding = { bottom: sidebar.offsetHeight };
+        sidebar.classList.remove('visible', 'measure-helper');
+    } else {
+        padding = { right: sidebar.offsetWidth };
+    }
+
+    map.flyTo({
+        center: coordinates,
+        zoom: 15,
+        speed: 1.5,
+        padding: padding
+    });
+    
+    history.pushState({sidebar: 'open', id: properties.source_id}, '', `#monument/${properties.source_id}`);
+
+    sidebar.classList.add('visible');
+}
+
+async function handleUrlHash() {
+    if (window.location.hash.startsWith('#monument/')) {
+        const objectId = parseInt(window.location.hash.replace('#monument/', ''), 10);
+        if (isNaN(objectId)) return;
+
+        try {
+            let geojsonData;
+            if (geojsonDataCache) {
+                console.log('Using data from cache.');
+                geojsonData = geojsonDataCache;
+            } else {
+                console.log('Cache is empty. Loading monuments.geojson...');
+                const response = await fetch('monuments.geojson');
+                if (!response.ok) return;
+                geojsonData = await response.json();
+                
+                geojsonDataCache = geojsonData;
+            }
+            const feature = geojsonData.features.find(f => f.properties.source_id === objectId);
+            if (feature) {
+                openSidebarForFeature(feature);
+            }
+        } catch (error) {
+            console.error("Error processing URL hash:", error);
+        }
+    }
+}

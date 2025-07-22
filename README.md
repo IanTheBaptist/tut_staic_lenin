@@ -23,4 +23,4 @@ Think of it less as a complete, official database and more as a personal project
 While we are not actively seeking new monument data, we welcome your feedback on the user experience. If you find a bug, have a suggestion, or run into any issues while using the map, please let us know!
 
 *   **Create an Issue:** The best way to report a problem is by [creating an Issue on GitHub](https://github.com/IanTheBaptist/tut_staic_lenin/issues).
-*   **Telegram Channel:** You can also reach out in our Telegram channel: t.me/tut_staic_lenin
+*   **Telegram Channel:** You can also reach out in our [Telegram channel](https://t.me/tut_staic_lenin)
