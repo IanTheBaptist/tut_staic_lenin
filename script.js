@@ -1,11 +1,14 @@
+const WIDE_BELARUS_BOUNDS = [16.884785,40.931153,38.198261,61.407894];
+const BELARUS_BOUNDS = [23.17, 51.25, 32.77, 56.17];
+
 const map = new maplibregl.Map({
     container: 'map', 
     style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
     center: [28.0, 53.5], 
-    zoom: 4.7
+    zoom: 4.7,
+    maxBounds: WIDE_BELARUS_BOUNDS
 });
 
-const BELARUS_BOUNDS = [23.17, 51.25, 32.77, 56.17];
 let geojsonDataCache = null;
 
 const sidebar = document.getElementById('sidebar');
@@ -15,6 +18,37 @@ const modalOverlay = document.getElementById('about-modal-overlay');
 const closeModalBtn = document.getElementById('close-modal-btn');
 const lightboxOverlay = document.getElementById('lightbox-overlay');
 const lightboxImage = document.getElementById('lightbox-image');
+const tagInSidebar = document.getElementById('tag')
+const tags = [
+  '',           
+  '#Гродзенская',
+  '#Брэсцкая',
+  '#Віцебская',
+  '#Мінская',
+  '#Гомельская',
+  '#Магілеўская'
+];
+
+class FilterManager {
+  constructor(map, layerId, filterProperty) {
+    this.map = map;
+    this.layerId = layerId;
+    this.filterProperty = filterProperty;
+  }
+
+  applyFilter(tag) {
+    if (!tag) {
+      this.map.setFilter(this.layerId, null);
+
+    } else {
+      this.map.setFilter(this.layerId, ['==', ['get', this.filterProperty], tag]);
+    }
+    this.map.fitBounds(BELARUS_BOUNDS, {
+        padding: 10,
+        duration: 2300
+        });
+    }
+}
 
 class AboutControl {
     onAdd(map) {
@@ -57,6 +91,74 @@ class ResetViewControl {
     }
 }
 
+class FilterControl {
+  constructor(filterManager, tags) {
+    this.filterManager = filterManager;
+    this.tags = tags;
+    this.container = null;
+    this.isOpen = false;
+    this.selectedTag = '';
+  }
+
+  onAdd(map) {
+    this.map = map;
+
+    this.container = document.createElement('div');
+    this.container.className = 'maplibregl-ctrl maplibregl-ctrl-group filter';
+
+    this.container.innerHTML = `
+    <button class="filter-toggle">Вобласці ▼</button>
+    <div class="filter-tags-container hidden">
+        ${this.tags.map(tag => {
+        const displayTag = tag.startsWith('#') ? tag.substring(1) : tag; // Для UI без #
+        return `
+            <button class="filter-tag" data-tag="${tag}">${displayTag || 'Усе'}</button>
+        `;
+        }).join('')}
+    </div>
+    `;
+
+    this.toggleButton = this.container.querySelector('.filter-toggle');
+    this.tagsContainer = this.container.querySelector('.filter-tags-container');
+
+    this.toggleButton.onclick = () => this.toggleTags();
+
+    this.tagsContainer.querySelectorAll('.filter-tag').forEach(btn => {
+      btn.onclick = () => {
+        const tag = btn.getAttribute('data-tag');
+        this.selectedTag = tag;
+        this.filterManager.applyFilter(tag);
+        this.tagsContainer.querySelectorAll('.filter-tag').forEach(b => {
+            b.classList.toggle('selected', b === btn); });        
+        this.closeTags();
+      };
+    });
+
+    return this.container;
+  }
+
+  toggleTags() {
+    this.isOpen = !this.isOpen;
+    if (this.isOpen) {
+      this.tagsContainer.classList.remove('hidden');
+      this.container.classList.add('open');
+    } else {
+      this.closeTags();
+    }
+  }
+
+  closeTags() {
+    this.isOpen = false;
+    this.tagsContainer.classList.add('hidden');
+    this.container.classList.remove('open');
+  }
+
+  onRemove() {
+    this.container.parentNode.removeChild(this.container);
+    this.map = undefined;
+  }
+}
+
 map.on('load', async () => { 
     try {
         map.addSource('monuments', {
@@ -83,9 +185,7 @@ map.on('load', async () => {
                     6, 0.05,     
                     15, 0.09,
                 ]
-
-            }
-            
+            },
         });
 
         map.on('click', 'monument-points', (e) => {
@@ -97,12 +197,15 @@ map.on('load', async () => {
         map.on('mouseenter', 'monument-points', () => { map.getCanvas().style.cursor = 'pointer'; });
         map.on('mouseleave', 'monument-points', () => { map.getCanvas().style.cursor = ''; });
 
-        map.addControl(new AboutControl(), 'top-left');
-        map.addControl(new ResetViewControl(), 'top-left');
+        map.addControl(new AboutControl(), 'top-right');
+        const filterManager = new FilterManager(map, 'monument-points', 'regionHashtag');
+        const filterControl = new FilterControl(filterManager, tags);
+        map.addControl(new ResetViewControl(), 'top-right');
+        map.addControl(filterControl, 'top-left');
+
+
 
         await handleUrlHash();
-
-
 
     } catch (error) {
         console.error('Не удалось загрузить ресурсы для карты:', error);
@@ -133,10 +236,35 @@ sidebar.addEventListener('click', (e) => {
         lightboxImage.src = e.target.dataset.fullSrc;
         lightboxOverlay.classList.remove('hidden');
     }
+    if (e.target && e.target.classList.contains('tag')) {
+        const tag = e.target.textContent.trim();
+        const filterControl = map._controls.find(ctrl => ctrl instanceof FilterControl);
+        if (filterControl) {
+            filterControl.selectedTag = tag.startsWith('#') ? tag : `#${tag}`;
+            filterControl.filterManager.applyFilter(filterControl.selectedTag);
+            filterControl.tagsContainer.querySelectorAll('.filter-tag').forEach(b => {
+                b.classList.toggle('selected', b.getAttribute('data-tag') === filterControl.selectedTag);
+            });
+            filterControl.closeTags();
+        }
+    }
 });
 
 lightboxOverlay.addEventListener('click', () => {
     lightboxOverlay.classList.add('hidden');
+});
+
+tagInSidebar.addEventListener('click', () => {
+    const tag = tagInSidebar.textContent.trim();
+    const filterControl = map._controls.find(ctrl => ctrl instanceof FilterControl);
+    if (filterControl) {
+        filterControl.selectedTag = tag.startsWith('#') ? tag : `#${tag}`;
+        filterControl.filterManager.applyFilter(filterControl.selectedTag);
+        filterControl.tagsContainer.querySelectorAll('.filter-tag').forEach(b => {
+            b.classList.toggle('selected', b.getAttribute('data-tag') === filterControl.selectedTag);
+        });
+        filterControl.closeTags();
+    }
 });
 
 window.onpopstate = function(event) {

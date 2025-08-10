@@ -1,10 +1,15 @@
 :root {
     --sidebar-width: 380px;
     --background-color: #f8f9fa;
-    --panel-background: #ffffff;
+    --panel-background: #fff;
     --text-color: #212529;
-    --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    --shadow: 0 0 20px rgba(0,0,0,0.08);
     --border-radius: 12px;
+    --accent: #6c757d;
+    --accent-dark: #495057;
+    --button-radius: 6px;
+    --button-shadow: 0 2px 8px rgba(108,117,125,0.08);
+    --button-text: #fff;
 }
 
 body {
@@ -138,6 +143,87 @@ body {
     background-color: #dee2e6;
 }
 
+/* Filter control */
+.filter {
+    position: relative;
+    background: var(--panel-background);
+    border-radius: var(--button-radius);
+    box-shadow: var(--button-shadow);
+}
+
+.filter button {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: var(--button-radius);
+}
+
+.filter .filter-toggle {
+    width: 6rem;  
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--panel-background);
+    color: var(--text-color);
+    border-radius: var(--button-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.filter .filter-tags-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background: var(--panel-background);
+    border-radius: var(--button-radius);
+    box-shadow: var(--button-shadow);
+    width: 6rem; /* Match toggle button width */
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.filter .filter-tags-container.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.filter .filter-tags-container:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.filter .filter-tag {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    background: none;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+}
+
+.filter .filter-tag:hover {
+    background-color: rgba(108, 117, 125, 0.1);
+}
+
+.filter .filter-tag.selected {
+    background-color: var(--accent);
+    color: var(--button-text);
+    
+}
+
+
+.filter .hidden {
+    display: none;
+}
 
 @media (min-width: 500px) {
     #sidebar-content {
