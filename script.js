@@ -231,6 +231,12 @@ modalOverlay.addEventListener('click', (e) => {
     }
 });
 
+window.onpopstate = function(event) {
+    if (!window.location.hash.startsWith('#monument/')) {
+        sidebar.classList.remove('visible');
+    }
+};
+
 sidebar.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('card-image')) {
         lightboxImage.src = e.target.dataset.fullSrc;
@@ -267,11 +273,7 @@ tagInSidebar.addEventListener('click', () => {
     }
 });
 
-window.onpopstate = function(event) {
-    if (!event.state || event.state.sidebar !== 'open') {
-        sidebar.classList.remove('visible');
-    }
-};
+
 
 function openSidebarForFeature(feature) {
     const properties = feature.properties;
