@@ -232,7 +232,7 @@ modalOverlay.addEventListener('click', (e) => {
 });
 
 window.onpopstate = function(event) {
-    if (!window.location.hash.startsWith('#monument/')) {
+    if (!event.state || event.state.sidebar !== 'open') {
         sidebar.classList.remove('visible');
     }
 };
@@ -272,7 +272,6 @@ tagInSidebar.addEventListener('click', () => {
         filterControl.closeTags();
     }
 });
-
 
 
 function openSidebarForFeature(feature) {
